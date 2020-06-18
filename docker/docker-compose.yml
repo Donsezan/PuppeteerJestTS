@@ -1,0 +1,15 @@
+version: '2'
+services:
+    jstest:
+        image: pupjestts 
+        volumes:
+           # - /dev/shm:/dev/shm
+            - ../:/home/seluser/PuppeteerJestTS
+        environment:
+            - SCREEN_WIDTH=1920
+            - SCREEN_HEIGHT=1080
+        ports: 
+            - "5900:5900" # VNC server 
+            #- "4444:4444" # Selenium Server
+            - "9229:9229"  # node debugger
+        working_dir: /home/seluser/PuppeteerJestTS
